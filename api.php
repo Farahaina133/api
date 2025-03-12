@@ -2,10 +2,10 @@
 header("Access-Control-Allow-Origin: *"); // Allow FlutterFlow to access API
 header("Content-Type: application/json");
 
-$host = "10.141.40.151";  // Use "127.0.0.1" if localhost fails
-$user = "admin";
-$pass = "Keda@123456";
-$dbname = "try_flutterflow";
+$host = "localhost";  // Use "127.0.0.1" if localhost fails
+$user = "root";
+$pass = "";
+$dbname = "user";
 
 // Connect to MySQL
 $conn = new mysqli($host, $user, $pass, $dbname);
@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch users from database
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM user_detail";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
